@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/chapterListFragment">
+
+    <fragment
+        android:id="@+id/chapterListFragment"
+        android:name="com.nkr.qurandaily.ui.fragment.chapterList.ChapterListFragment"
+        android:label="chapter_list_fragment"
+        tools:layout="@layout/chapter_list_fragment" >
+        <action
+            android:id="@+id/action_chapterListFragment_to_chapterDetailFragment"
+            app:destination="@id/chapterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapterDetailFragment"
+        android:name="com.nkr.qurandaily.ui.fragment.chapterDetail.ChapterDetailFragment"
+        android:label="chapter_detail_fragment"
+        tools:layout="@layout/chapter_detail_fragment" />
+</navigation>

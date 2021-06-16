@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chapter"
+            type="com.nkr.qurandaily.model.Chapter"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_cly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space8dp"
+        android:layout_marginBottom="@dimen/space8dp"
+        >
+
+        <TextView
+            android:id="@+id/chapter_item_image"
+            android:layout_width="@dimen/listItemIconSize"
+            android:layout_height="@dimen/listItemIconSize"
+            android:scaleType="centerCrop"
+            android:text="@{chapter.chapter_num}"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:textColor="@color/colorPurpleLight"
+            android:textSize="@dimen/textsize_small"
+            android:background="@drawable/bg_surah_num"
+            tools:text="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chapter_item_title"
+             />
+
+        <TextView
+            android:id="@+id/chapter_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@{chapter.nameComplex}"
+            android:textSize="@dimen/normalTextSize"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorPurpleDarker"
+            android:layout_marginStart="@dimen/space8dp"
+            app:layout_constraintStart_toEndOf="@+id/chapter_item_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/chapter_item_surah_type"
+            tools:text="Surah Fatiha" />
+
+        <TextView
+            android:id="@+id/chapter_item_surah_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@{chapter.revelationPlace}"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorTextGray"
+            android:textSize="@dimen/textsize_small"
+            app:layout_constraintStart_toStartOf="@+id/chapter_item_title"
+            app:layout_constraintTop_toBottomOf="@+id/chapter_item_title"
+            tools:text="Meccan - 7 verses" />
+
+        <TextView
+            android:id="@+id/chapter_item_name_arabic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@{chapter.nameArabic}"
+            android:textSize="@dimen/normalTextSize"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorPurpleLight"
+            android:gravity="end"
+            android:layout_marginEnd="@dimen/space8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Arabic Name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
